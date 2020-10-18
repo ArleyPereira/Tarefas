@@ -210,12 +210,8 @@ class TasksPendingFragment : Fragment(), AdapterTask.OnTaskItemClickListener {
             saveTask(task)
 
             Snackbar.make(layout, "Tarefa feita.", Snackbar.LENGTH_LONG).setAction("Desfazer") {
-
-                //taskPosition = tasks.indexOf(task)
                 task.completed = false
                 saveTask(task)
-
-
             }.show()
 
         }else {

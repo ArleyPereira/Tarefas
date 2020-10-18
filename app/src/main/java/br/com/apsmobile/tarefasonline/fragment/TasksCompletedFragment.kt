@@ -187,23 +187,14 @@ class TasksCompletedFragment : Fragment(), AdapterTask.OnTaskItemClickListener {
         }
     }
 
-    // Exibe SnackBar para desfazer a deleção
-    fun View.snack(message: String, task: Task) {
-
-    }
-
     override fun onItemClick(task: Task) {
         if(!task.completed){
 
             saveTask(task)
 
             Snackbar.make(layout, "Tarefa pendente.", Snackbar.LENGTH_LONG).setAction("Desfazer") {
-
-                //taskPosition = tasks.indexOf(task)
                 task.completed = true
                 saveTask(task)
-
-
             }.show()
 
         }else {
