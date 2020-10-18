@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Tarefas</string>
+    <string name="hint_description">Descrição</string>
+    <string name="hint_title">Título</string>
+    <string name="text_btn_salvar">Salvar</string>
+    <string name="text_menu_new_task">New</string>
+    <string name="hint_email">Email</string>
+    <string name="text_btn_login">Entrar</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_password">Senha</string>
+    <string name="text_btn_register">Cadastrar</string>
+    <string name="text_menu_logout">Deslogar</string>
+    <string name="form_label_register">Criar Conta</string>
+    <string name="form_label_recover_password">Recuperar Senha</string>
+    <string name="email_is_already_used">O endereço de e-mail já está sendo usado por outra conta.</string>
+    <string name="password_is_invalid">A senha fornecida é inválida. A senha deve ter pelo menos 6 caracteres.</string>
+    <string name="email_incorrect">O endereço de e-mail está formatado incorretamente.</string>
+    <string name="register_other_error">Não conseguimos concluir o seu cadastro, tente utilizar outro endereço de e-mail.</string>
+    <string name="text_btn_send">Enviar</string>
+    <string name="form_label_forgot_password">Esqueceu a senha ?</string>
+    <string name="title_activity_tabs">TabsActivity</string>
+    <string name="tab_text_1">Pendentes</string>
+    <string name="tab_text_2">Feitas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
