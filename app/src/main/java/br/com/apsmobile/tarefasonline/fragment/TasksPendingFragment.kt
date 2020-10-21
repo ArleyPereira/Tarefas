@@ -1,26 +1,23 @@
 package br.com.apsmobile.tarefasonline.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.*
-import androidx.fragment.app.Fragment
-import android.view.inputmethod.InputMethodManager
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.apsmobile.tarefasonline.R
 import br.com.apsmobile.tarefasonline.adapter.AdapterTask
-import br.com.apsmobile.tarefasonline.authentication.LoginActivity
 import br.com.apsmobile.tarefasonline.model.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_tasks_pending.*
 import kotlinx.android.synthetic.main.fragment_tasks_pending.view.*
 
 class TasksPendingFragment : Fragment(), AdapterTask.OnTaskItemClickListener {

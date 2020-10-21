@@ -40,6 +40,7 @@ class RegisterUserActivity : AppCompatActivity() {
 
     }
 
+    // Valida as informações inseridas
     private fun validateRegister(){
 
         val name = edtName.text.toString()
@@ -59,15 +60,22 @@ class RegisterUserActivity : AppCompatActivity() {
 
     }
 
+    // Criar a conta do Usuário no Firebase Autentication
     private fun registerUser(user: User){
         auth.createUserWithEmailAndPassword(user.email, user.password)
             .addOnCompleteListener(this) { task ->
                 if(task.isSuccessful){
 
+                    // Recupera o ID do cadastro
                     user.id = auth.currentUser!!.uid
+
+                    // Salva os dados do Usuário no Firebase Data Base
                     saveUser(user)
 
+                    // Fecha a Activity
                     finish()
+
+                    // Leva o Usuário para página home do app
                     startActivity(Intent(this, MainActivity::class.java))
                 }else {
                     validateRegister(task.exception?.message.toString())
@@ -75,6 +83,7 @@ class RegisterUserActivity : AppCompatActivity() {
             }
     }
 
+    // Salva os dados do Usuário no Firebase Data Base
     private fun saveUser(user: User){
         val firebaseRef = FirebaseDatabase.getInstance().reference
         val userRef = firebaseRef
@@ -83,14 +92,14 @@ class RegisterUserActivity : AppCompatActivity() {
         userRef.setValue(user)
     }
 
+    // Oculta o teclado do dispositivo
     private fun hideKeyboard() {
         val inputManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputManager.hideSoftInputFromWindow(currentFocus?.windowToken, InputMethodManager.SHOW_FORCED)
     }
 
+    // Exibe mensagem para o Usuário em caso de erro
     private fun validateRegister(error: String){
-        Log.i("INFOTESTE", "validateRegister: $error")
-
         showDialog(when(error){
             "The email address is already in use by another account." -> {
                 getString(R.string.email_is_already_used)
@@ -107,6 +116,7 @@ class RegisterUserActivity : AppCompatActivity() {
         })
     }
 
+    // Exibe dialog com a mensagem
     private fun showDialog(msg: String){
 
         val builder = AlertDialog.Builder(this)
